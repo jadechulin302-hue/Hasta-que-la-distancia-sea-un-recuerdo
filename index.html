@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hasta que la distancia sea un recuerdo</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #0b1026, #1b1f3a, #0d0f1a);
+  color: white;
+}
+
+/* estrellas */
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.container {
+  text-align: center;
+  z-index: 2;
+  padding: 20px;
+}
+
+.envelope {
+  font-size: 60px;
+  margin-bottom: 15px;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+button {
+  margin-top: 10px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.music {
+  background: #7fb3d5;
+  color: white;
+}
+
+.open {
+  background: white;
+  color: #1b1f3a;
+}
+</style>
+</head>
+
+<body>
+
+<script>
+for (let i = 0; i < 70; i++) {
+  let star = document.createElement("div");
+  star.className = "star";
+  star.style.top = Math.random() * 100 + "vh";
+  star.style.left = Math.random() * 100 + "vw";
+  star.style.animationDelay = Math.random() * 2 + "s";
+  document.body.appendChild(star);
+}
+</script>
+
+<div class="container">
+
+  <div class="envelope">💌</div>
+
+  <h1>Hasta que la distancia sea un recuerdo</h1>
+
+  <p>Antes de abrir mi corazón... escucha nuestra canción</p>
+
+  <button class="music" onclick="window.open('https://open.spotify.com/search/siddhartha%20ser%20parte')">
+    🎵 Ser Parte - Siddhartha
+  </button>
+
+  <br>
+
+  <button class="open" onclick="alert('Próximo paso: abrimos la carta 💙')">
+    ❤️ Abrir mi corazón
+  </button>
+
+</div>
+
+</body>
+</html>
