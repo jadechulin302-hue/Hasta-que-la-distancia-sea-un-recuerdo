@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hasta que la distancia sea un recuerdo</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #1b1f3a, #0d0f1a);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+/* estrellas */
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.container {
+  text-align: center;
+  z-index: 2;
+}
+
+.title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.music {
+  background: #89b9d8;
+  color: white;
+}
+
+.open {
+  background: #ffffff;
+  color: #1b1f3a;
+}
+
+.envelope {
+  font-size: 50px;
+  margin: 20px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- estrellas -->
+<script>
+for (let i = 0; i < 60; i++) {
+  let star = document.createElement("div");
+  star.className = "star";
+  star.style.top = Math.random() * 100 + "vh";
+  star.style.left = Math.random() * 100 + "vw";
+  star.style.animationDelay = Math.random() * 2 + "s";
+  document.body.appendChild(star);
+}
+</script>
+
+<div class="container">
+  <div class="envelope">💌</div>
+
+  <div class="title">Hasta que la distancia sea un recuerdo</div>
+
+  <div class="subtitle">
+    Antes de abrir mi corazón... escucha nuestra canción
+  </div>
+
+  <button class="music" onclick="window.open('https://open.spotify.com/search/siddhartha%20ser%20parte')">
+    🎵 Ser Parte - Siddhartha
+  </button>
+
+  <br>
+
+  <button class="open" onclick="alert('Aquí abriremos la carta 💙 (siguiente paso)')">
+    ❤️ Abrir mi corazón
+  </button>
+</div>
+
+</body>
+</html>
